@@ -1,0 +1,143 @@
+/* Navbar Styling */
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffc107; /* Bright yellow for the navbar */
+  padding: 15px 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+.navbar button {
+  background-color: transparent;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border-radius: 8px;
+  margin: 0 12px;
+  transition: color 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+}
+
+.navbar button:hover {
+  color: #333;
+  background-color: #e0a800; /* Darker yellow when hovering */
+  transform: translateY(-3px); /* Slight lift effect */
+}
+
+.navbar button:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(255, 193, 7, 0.7); /* Highlight focus state */
+}
+
+/* Main Container Styling */
+.hardware-projects-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  padding: 20px; /* Add some padding around the container */
+  background-color: #f4f4f9;
+  min-height: 100vh; /* Full viewport height */
+  overflow-y: auto; /* Ensure content is scrollable */
+  position: relative;
+}
+
+/* Heading Styling */
+.hardware-projects-container h1 {
+  font-size: 3rem;
+  color: #333;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  border-bottom: 3px solid #ffc107;
+  padding-bottom: 15px;
+  animation: slideDown 1s ease-out forwards; /* Slide-in animation */
+  opacity: 0; /* Start hidden for animation */
+  transform: translateY(-50px); /* Start above */
+}
+
+/* Animation for Heading */
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Button Styling */
+.hardware-projects-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin-top: 40px; /* Space between heading and buttons */
+  opacity: 0; /* Start hidden for animation */
+  transform: translateY(50px); /* Start below */
+  animation: slideUp 1s 0.5s forwards; /* Slide up after heading animation */
+}
+
+.hardware-projects-buttons button {
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  color: white;
+  background-color: #ffc107;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  min-width: 200px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hardware-projects-buttons button:hover {
+  background-color: #e0a800; /* Darker yellow on hover */
+  transform: scale(1.05); /* Slight scale effect */
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+.hardware-projects-buttons button:focus {
+  outline: none;
+  box-shadow: 0 0 15px rgba(255, 193, 7, 0.7); /* Highlight button on focus */
+}
+
+/* Animation for Buttons */
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .navbar button {
+    font-size: 1rem;
+    padding: 8px 16px;
+  }
+
+  .hardware-projects-container h1 {
+    font-size: 2.4rem;
+  }
+
+  .hardware-projects-buttons button {
+    font-size: 1rem;
+    min-width: 150px;
+  }
+}

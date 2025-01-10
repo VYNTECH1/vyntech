@@ -1,0 +1,140 @@
+/* Navbar Styling */
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffc107; /* Bright yellow for the navbar */
+  padding: 15px 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: background-color 0.3s ease; /* Smooth background transition on scroll */
+}
+
+.navbar button {
+  background-color: transparent;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border-radius: 8px;
+  margin: 0 12px;
+  transition: color 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+}
+
+.navbar button:hover {
+  color: #333;
+  background-color: #e0a800; /* Darker yellow when hovering */
+  transform: translateY(-3px); /* Slight lift effect */
+}
+
+.navbar button:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(255, 193, 7, 0.7); /* Highlight focus state */
+}
+
+/* Main Container Styling */
+.software-projects-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px 20px; /* Space for navbar */
+  background-color: #f9f9f9; /* Light gray background */
+  min-height: 100vh;
+  transition: background-color 0.3s ease;
+}
+
+/* Heading Styling with Slide-in Animation */
+.software-projects-container h1 {
+  font-size: 3rem;
+  color: #333;
+  font-weight: 700;
+  margin-bottom: 40px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-bottom: 3px solid #ffc107;
+  padding-bottom: 15px;
+  opacity: 0;
+  transform: translateY(-50px); /* Initially positioned off-screen */
+  animation: slideDown 1s forwards; /* Slide from top */
+}
+
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Button Styling with Slide-in Animation */
+.software-projects-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.software-projects-buttons button {
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  color: white;
+  background-color: #ffc107;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  min-width: 200px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0;
+  transform: translateY(50px); /* Initially positioned off-screen */
+  animation: slideUp 1s 0.5s forwards; /* Slide from bottom */
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.software-projects-buttons button:hover {
+  background-color: #e0a800; /* Darker yellow on hover */
+  transform: scale(1.05); /* Slight scale effect */
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+.software-projects-buttons button:focus {
+  outline: none;
+  box-shadow: 0 0 15px rgba(255, 193, 7, 0.7); /* Highlight button on focus */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .navbar button {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+
+  .software-projects-container h1 {
+    font-size: 2.5rem;
+  }
+
+  .software-projects-buttons button {
+    font-size: 1rem;
+    min-width: 150px;
+  }
+}

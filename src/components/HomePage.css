@@ -1,0 +1,181 @@
+/* General container styling */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  font-family: Arial, sans-serif;
+  position: relative; /* Enable positioning for child elements */
+}
+
+/* Add overlay for background brightness adjustment */
+.home-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Semi-transparent black overlay */
+  z-index: 1; /* Place it below the text and buttons */
+}
+
+/* Logo container styling */
+.logo-container {
+  position: absolute; /* Position the logo relative to the container */
+  top: 20px; /* Distance from the top edge */
+  left: 20px; /* Distance from the left edge */
+  animation: slideInLeft 1s ease-out forwards; /* Animation to slide logo in from the left */
+  z-index: 2; /* Ensure logo is above the overlay */
+}
+
+.logo {
+  width: 100px; /* Set fixed width */
+  height: 100px; /* Set fixed height to make it square */
+  object-fit: contain; /* Maintain aspect ratio of the logo */
+  border: 2px solid white; /* Optional: Add a border around the logo */
+  border-radius: 10px; /* Optional: Slightly round the corners */
+}
+
+/* Title styling */
+.page-title {
+  font-size: 60px; /* Increased size for prominence */
+  text-align: center;
+  color: orange; /* Changed text color to orange */
+  font-weight: bold;
+  position: absolute;
+  top: 50%; /* Vertically center the title */
+  transform: translateY(-50%); /* Fine-tune to center exactly */
+  animation: slideInTop 1s forwards; /* Animation to slide in from the top */
+  z-index: 2; /* Ensure title appears above the overlay */
+}
+
+/* Buttons container styling */
+.buttons-container {
+  display: flex;
+  justify-content: center; /* Center buttons horizontally */
+  gap: 30px;
+  padding: 25px;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+  border-radius: 50px; /* Softer rounded corners */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3); /* Modern shadow effect */
+  position: absolute;
+  bottom: 50px; /* Move buttons up */
+  opacity: 0;
+  animation: slideUp 1.2s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+  animation-delay: 1s;
+  z-index: 2; /* Ensure buttons appear above the overlay */
+}
+
+/* Individual button styling */
+.nav-btn {
+  background: linear-gradient(45deg, #FFA500, #FFD700); /* Gradient from orange to yellow */
+  color: black; /* Black text color */
+  border: none; /* Remove default button border */
+  padding: 15px 30px; /* Increased padding for a modern look */
+  font-size: 20px; /* Increased font size */
+  font-weight: bold;
+  border-radius: 30px; /* Fully rounded buttons */
+  cursor: pointer; /* Pointer cursor on hover */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Elevated shadow */
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s; /* Smooth hover effects */
+  letter-spacing: 1.2px; /* Slightly spaced text for better readability */
+  opacity: 0; /* Initially hidden */
+  transform: translateY(30px); /* Start off-screen */
+  animation: fadeInUp 0.5s forwards; /* Fade in animation */
+}
+
+/* Stagger the buttons animation delay */
+.nav-btn:nth-child(1) {
+  animation-delay: 0.5s;
+}
+.nav-btn:nth-child(2) {
+  animation-delay: 0.7s;
+}
+.nav-btn:nth-child(3) {
+  animation-delay: 0.9s;
+}
+.nav-btn:nth-child(4) {
+  animation-delay: 1.1s;
+}
+.nav-btn:nth-child(5) {
+  animation-delay: 1.3s;
+}
+.nav-btn:nth-child(6) {
+  animation-delay: 1.5s;
+}
+
+/* Hover and focus effects */
+.nav-btn:hover {
+  background: linear-gradient(45deg, #FFD700, #FFA500); /* Reverse gradient on hover */
+  color: black; /* Keep text color black on hover */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Larger shadow on hover */
+  transform: translateY(-5px); /* Slightly lift the button */
+}
+
+.nav-btn:active {
+  transform: translateY(0); /* Reset position when clicked */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Original shadow */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .buttons-container {
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 15px; /* Reduce space between buttons */
+  }
+
+  .nav-btn {
+    width: 100%; /* Buttons take full width on smaller screens */
+    text-align: center;
+  }
+}
+
+/* Keyframe Animations */
+
+/* Slide in title from top */
+@keyframes slideInTop {
+  0% {
+    top: -100px; /* Start from above the screen */
+  }
+  100% {
+    top: 50%; /* End at the center of the screen */
+  }
+}
+
+/* Slide up buttons from the bottom */
+@keyframes slideUp {
+  0% {
+    bottom: -100px; /* Start from below the screen */
+  }
+  100% {
+    bottom: 50px; /* End at the final position */
+  }
+}
+
+/* Fade in buttons and move up */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0; /* Initially hidden */
+    transform: translateY(30px); /* Start off-screen */
+  }
+  100% {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Move to original position */
+  }
+}
+
+/* Slide logo in from left */
+@keyframes slideInLeft {
+  0% {
+    left: -150px; /* Start off-screen (left) */
+  }
+  100% {
+    left: 20px; /* End at the final position */
+  }
+}

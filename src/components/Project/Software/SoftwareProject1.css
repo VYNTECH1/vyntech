@@ -1,0 +1,77 @@
+/* Container Styling */
+.project-detail-container {
+  max-width: 800px;
+  margin: 80px auto; /* Centered with margin for header/navbar */
+  padding: 30px;
+  background-color: #f4f4f9;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  font-family: 'Roboto', sans-serif;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.project-detail-container:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  transform: scale(1.01);
+}
+
+/* Image Styling */
+.project-image {
+  display: block;
+  width: 100%; /* Full width inside the container */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Title Styling */
+.project-detail-container h1 {
+  font-size: 2.5em;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 15px;
+  border-bottom: 3px solid #ffc107;
+  padding-bottom: 10px;
+}
+
+/* Paragraph Styling */
+.project-detail-container p {
+  font-size: 1.2em;
+  color: #555;
+  line-height: 1.8;
+  margin-top: 15px;
+  text-align: justify;
+}
+
+/* Additional Enhancements */
+.project-detail-container::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  width: 60px;
+  height: 5px;
+  background-color: #ffc107; /* Yellow accent */
+  transform: translateX(-50%);
+  border-radius: 5px;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .project-detail-container {
+    padding: 20px;
+    margin: 50px auto;
+  }
+
+  .project-detail-container h1 {
+    font-size: 2em;
+  }
+
+  .project-detail-container p {
+    font-size: 1.1em;
+  }
+}
